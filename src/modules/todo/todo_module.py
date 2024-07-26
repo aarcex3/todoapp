@@ -8,9 +8,7 @@ class TodoModule:
 
     def __init__(self):
         self.router = APIRouter()
-        self.router.include_router(
-            todo_controller.router, prefix="/todos", tags=["Todo"]
-        )
+        self.router.include_router(todo_controller.router, tags=["Todo"])
 
 
 todo_module = TodoModule()

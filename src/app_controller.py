@@ -14,7 +14,7 @@ class AppController:
         self._setup_routes()
 
     def _setup_routes(self):
-        @self.router.get("/")
+        @self.router.get("/", include_in_schema=False)
         async def get_app_info():
             """Root endpoint"""
             return self.service.get_app_info()
